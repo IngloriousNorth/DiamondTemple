@@ -1,6 +1,12 @@
 const graph = {
 	nodes : [
 		{
+			index : "lotus_omniscience",
+			quotation : "Even though the buddhas of the future <br> Will teach innumerable paths to the Dharma <br> Their teachings will actually be <br> For the sake of the Single Vehicle... <br> The Leaders will teach thru Skillful Means.",
+			src: "The Lotus Sutra",
+			ai: false
+		},
+		{
 			index : "nietzsche_myth",
 			quotation : "Without myth every culture loses its healthy creative natural power: it is only a horizon surrounded with myths that unifies a whole cultural movement.",
 			src : "Nietzsche, The Birth of Tradgedy"
@@ -305,12 +311,6 @@ const graph = {
 			index: "heart_attainment",
 			quotation : "There is no attainment, and nothing to attain.",
 			src : "Heart Sutra",
-			ai: false
-		},
-		{
-			index : "lotus_omniscience",
-			quotation : "Even though the buddhas of the future <br> Will teach innumerable paths to the Dharma <br> Their teachings will actually be <br> For the sake of the Single Vehicle... <br> The Leaders will teach thru Skillful Means.",
-			src: "The Lotus Sutra",
 			ai: false
 		},
 		{

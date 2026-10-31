@@ -85,12 +85,9 @@ const QRNG = function(providedStartKey = null) {
 
             if (node) {
                 // Smooth flash card fade transition
-                TEMPEST.paramSET({"index" : node.index});
-                $('#myriad, #myriad_src, div.TEMPEST.home').fadeOut(150, function() {
-                    $('#myriad').html(node.quotation);
-                    $('#myriad_src').html(" -- " + node.src);
-                    $('#myriad, #myriad_src, div.TEMPEST.home').fadeIn(150);
-                });
+                TEMPEST.route(`#home?index=${node.index}`)
+                $('#myriad').html(node.quotation);
+                $('#myriad_src').html(" -- " + node.src);
             }
         })
         .catch(err => {

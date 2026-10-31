@@ -15,7 +15,7 @@ $(document).ready(function(){
 					fn : function(){
 						$(".page_heading").text("Home")
 						MVC.View.home.initialize();
-						MVC.Controller.flash.initialize(TEMPEST.paramREC()?.index);
+						MVC.Controller.quantumScroll.unfold();
 					}
 				},
 				{
@@ -34,8 +34,10 @@ $(document).ready(function(){
 				}
 
 			]
-	}, ()=>MVC.View.menu.unfold());
-})
+	}, ()=>{MVC.View.menu.unfold();
+			MVC.Controller.flash.initialize(TEMPEST.paramREC()?.index);
+
+	})})
 
 $(document).on("TEMPEST", function(){
 	$(".TEMPEST").scrollTop(0);
