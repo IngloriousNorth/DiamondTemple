@@ -1,345 +1,524 @@
-/* ==========================================
-   1. GLOBAL & BODY STYLING (Monastic Brown / Zen Theme)
-   ================================          */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+
+html{
+    height: 100%;
+}
 body {
-    background-color: #2b1f18; /* Deep monastic brown base */
-    color: #e6d5c3;            /* Warm parchment text color */
-    font-family: 'Share Tech', sans-serif;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    line-height: 1;
+    height: 100%;
+    table-layout: fixed;
+    overflow: hidden;
+    background-color:lightyellow; !important;
+
 }
-
-header {
-    background: linear-gradient(135deg, #3d291d, #241812);
-    border-bottom: 2px solid rgba(218, 165, 32, 0.3);
-    padding: 12px 20px;
-    box-sizing: border-box;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 9999;
-}
-
-header h1 {
-    font-family: 'Zen Dots', sans-serif;
-    color: WHITESMOKE !important;
-    font-size: 22px;
-    margin: 0;
-    letter-spacing: 1px;
-    transition: text-shadow 0.3s ease, color 0.3s ease;
-    text-decoration: none;
-}
-
-header a {
-    text-decoration: none;
-}
-
-header h1:hover {
-    text-shadow: 0 0 12px rgba(218, 165, 32, 0.8), 0 0 25px rgba(255, 215, 0, 0.4);
-    color: #fff;
-}
-
-
-/* ==========================================
-   2. SIDEBAR & DHARMA WHEEL NAVIGATION
-   ================================          */
-.sidebar, .js_mobile_menu {
-    position: absolute;
-    top: 72px;
-    left: 0;
-    width: 280px;
-    height: calc(100% - 72px);
-    background: rgba(43, 31, 24, 0.95);
-    border-right: 2px solid rgba(218, 165, 32, 0.2);
-    box-sizing: border-box;
-    overflow-y: auto;
-    padding: 15px 10px;
-    z-index: 900;
-}
-
-.sidebar ul.menu, .js_mobile_menu ul.menu {
+ol, ul {
     list-style: none;
-    padding: 0;
-    margin: 0;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
 }
 
-/* Ensure sidebar list items stack cleanly and take full width */
-.sidebar ul.menu > li, .js_mobile_menu ul.menu > li{
-    display: block;
-    position: relative;
-    width: 100%;
-    margin-bottom: 10px;
+#myriad{
+    width:100%;
+}
+
+.sidebar{
+    background:linear-gradient(180deg, slategray, darkviolet, whitesmoke) !important;
+    width:288px;
+    padding-right:15px;
+    border-right:47px solid DARKGOLDENROD !important;
+    box-shadow:9px 9px 9px #50C777;
+    position:absolute;
+    top:0px;
+    z-index:999;
+    position:absolute;
+    height:100%;
+
+}
+
+/* If using a custom wrapper span like <span class="dropcap">T</span> */
+.dropcap, 
+.quotation::first-letter {
+    float: left;
+    font-size: 55px;           /* Adjust size as needed */
+    line-height: 0.8;          /* Tight line-height prevents vertical bleed */
+    margin-right: 8px;         /* Creates breathing room so text doesn't overlap */
+    margin-bottom: -4px;
+    padding-top: 4px;
+    color:gold;
+    font-style:italic;
+    font-family: "Zen Dots", "Georgia", serif;
+}
+
+.quotation_div{
+    padding:44px;
+    height:444 !important;
+    position:relative !important;
+}
+
+/* Ensure the quotation container properly clears floats */
+.quotation_div .quotation {
+    overflow: hidden;          /* Establishes new block formatting context */
     box-sizing: border-box;
-    clear: both;
+    word-wrap: break-word;
 }
 
-/* Category header links */
-.sidebar .nav_a, .js_mobile_menu .nav_a{
-    font-family: 'Rationale', sans-serif;
-    font-size: 18px;
-    color: #f3e5ab;
-    text-decoration: none;
-    display: inline-block;
-    padding: 6px 8px;
-    transition: color 0.2s ease;
+button{
+    font-family:"Zen Dots", system-ui;
+    width:94px;
+    height:72px;
+    color: slateblue;
+    background-color: palegoldenrod;
+    border: 5px solid gold;
+    box-shadow:2px 3px 2px cyan;
+    border-radius:5px;
+    display:block;
+    position:absoulute;
+    cursor:pointer;
+    position:fixed;
+    left:0;
+    bottom:0;
+    margin:0 auto;
 }
 
-.sidebar .nav_a:hover, .js_mobile_menu .nav_a:hover{
-    color: #ffd700;
-    text-shadow: 0 0 8px rgba(218, 165, 32, 0.6);
+button:hover{
+    border:7px solid gold;
+    box-shadow:3px 5px 7px silver;
+    font-weight:bold;
+    color:DARKGOLDENROD;
 }
 
-/* Submenu container */
-.sidebar ul.menu li ul, .js_mobile_menu ul.menu li ul{
-    list-style: none;
-    padding-left: 20px;
-    margin: 5px 0 0 0;
-    display: none; 
-    width: 100%;
+.src{
+    text-align:right;
+}
+
+div.TEMPEST{
+    overflow-y:auto;
+    height:100%;
+    position:absolute;
+    box-sizing:border-box;
+    right:0px;
+    top:69px;
+    bottom:0px;
+    position:absolute;
+}
+
+.quotation_div{
+    border-bottom:3px solid YELLOW;
+    /* 1. Force the container to include padding and borders inside its total width/height */
     box-sizing: border-box;
+    
+    /* 2. Ensure it expands dynamically to fit all text/edits without overlapping */
+    height: auto;
+    min-height: fit-content;
+    
+    /* 3. Your desired padding inside the border */
+    padding: 16px; 
+    
+    /* 4. Keep your bottom border styling intact */
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2); 
+    
+    /* 5. Ensure text wrapping so long lines stay inside the box */
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 }
 
-.sidebar ul.menu li ul li, .js_mobile_menu ul.menu li ul li{
-    display: block;
-    width: 100%;
+input{
+    position:fixed;
+    right:0;
+    bottom:0;
+    height:72px;
+    width:225px !important;
+    background:linear-gradient(90deg, yellow, goldenrod, WHITESMOKE);
+    z-index:9999;
+    font-family:"Share Tech", system-ui;
+    color:mediumvioletred;
+    border-radius:8px;
+    border:4px solid darkviolet;
+    box-shadow:2px 3px 2px cyan;
 }
 
-/* Submenu items (.TEMPEST / .quotations links) */
-.sidebar ul ul li a.quotations, .js_mobile_menu ul ul li a.quotations {
-    display: block;
-    padding: 6px 10px;
-    color: #d1b89b;
-    text-decoration: none;
-    font-size: 14px;
-    border-radius: 4px;
-    transition: background-color 0.2s ease, color 0.2s ease;
+input::placeholder{
+    color:darkviolet;
+    text-shadow:2px 2px #000;
+    font-family:"Share Tech", system-ui;
+    font-size:24px;
+
 }
 
-.sidebar ul ul li a.quotations:hover, .js_mobile_menu  ul ul li a.quotations:hover {
-    background-color: rgba(218, 165, 32, 0.15);
-    color: #ffd700;
-    padding-left: 14px;
+header{
+    z-index:9999;
+    box-shadow:7px 7px 7px #000;
+    position:fixed;
+    width:100%;
+    height:72px;
+    top:0;
+
+    right:0;
+    background-color:darkred;
+    background:linear-gradient(90deg,red, gold, orangered);
+    border-bottom:7px solid #007BFF;
+    border-bottom-left-radius: 32px;
+    border-bottom-right-radius: 32px;
+
 }
 
-/* Show / Hide toggle carets */
-.show, 
-.hide {
-    display: inline-block;
-    width: 20px;
-    text-align: center;
-    vertical-align: middle;
-    text-decoration: none;
-    font-size: 14px;
-    color: #daa520;
-    margin-right: 4px;
-    transition: transform 0.3s ease, color 0.2s ease;
+h1{
+    display:block;
+    color:BLUEVIOLET;
+    text-shadow:3px 4px gold;
+    font-size:40px;
+    margin-top:17px;
+    z-index:9997;
+    letter-spacing:4px;
+    padding-left:8px;
+    height:71px;
+    padding-bottom:3px;
+    position:absolute;
+    text-align:center;
+    box-sizing:border-box;
+    font-family:"Zen Dots", "Georgia";
+
+
+    
+}
+
+h1 a, h1 a:visited{
+    text-decoration:none;
+}
+.menu{
+    width:300px;
+    height:100%;
+    margin:0 auto;
+    margin-top:100px;
+    overflow-y:auto;
+
+
+
+
+}
+
+.menu li{
+    border-bottom:3px dotted palegoldenrod;
+    
+}
+
+.nav_a{
+    display:block;
+    padding:21px;
+    width:281px;
+    color:GOLD !important;
+    text-shadow:2px 1px cyan;
+    position:relative;
+    letter-spacing:4px;
+    box-sizing:border-box;
+    text-decoration:underline;
+    font-family:"Rationale", "Tahoma";
+    font-weight:400;
+    font-size:33px;
+}
+
+.menu ul{
+    display:none;
+}
+
+.show, .hide{
+    color:BLUE;
+    padding-top:25px;
+    padding-left:9px;
+    padding-right:7px;
+    font-size:16px;
+    float:left;
+
+}
+
+.hide{
+    color:darkgoldenrod;
+}
+
+.show{
 }
 
 .hide{
     display:none;
 }
 
-.show:hover, 
-.hide:hover {
-    color: #ffd700;
+.nav_a:hover{
+    color:palevioletred;
 }
 
-.hide{
-    color:whitesmoke;
+a.quotations {
+    padding:16px 8px 16px 8px;
+    display:block;
+    height:40px;
+    box-sizing:border-box;
+    color:mediumvioletred;
+    text-shadow:1px 1px gold;
+    z-index:999;
+    position:relative;
+    letter-spacing:3px;
+    font-size:21px;
+    text-decoration:none;
+    letter-spacing: 3px;
+    font-family:"Share Tech", "serif";
 }
 
-/* ==========================================
-   3. TEMPEST CONTAINER & BACKGROUND SCALING
-   ================================          */
-div.TEMPEST {
-    height: 87%;
-    padding: 99px;
-    position: absolute;
-    top: 72px;
-    left: 280px; /* Offset past sidebar width */
-    right: 0;
-    box-sizing: border-box;
-    
-    background-image: linear-gradient(rgba(43, 31, 24, 0.85), rgba(43, 31, 24, 0.85)), url('path/to/your/image.jpg');
-    background-size: cover; 
-    background-position: center center; 
-    background-repeat: no-repeat; 
-    background-attachment: fixed; 
-    
+a.quotations:hover{
+    color:gold;
+}
+
+
+div.TEMPEST{
+    left:288px;
+    height:calc(100% - 72px);
+    width:calc(100% - 288px);
+    padding:77px;
+    position:absolute;
+    top:72px;
+    background: radial-gradient(#000000, darkslategray, darkslateblue);
     background-blend-mode: lighten;
-    isolation: isolate;
-    overflow-y: auto;
+        overflow-y:auto;
+        text-align:center;
+
+}
+
+.src{
+    float:right;
+}
+
+.home p{
+    
+    padding-top:32px;
+}
+
+div.home{
+    padding-left:calc(3.5% + 31px);
+    padding-right: calc(3.5% + 31px);
 }
 
 
-/* ==========================================
-   4. QUOTATION CARDS & ABSOLUTE SOURCE PADDING
-   ================================          */
-.quotation_div {
-    position: relative;          
-    height: auto;
-    min-height: 120px;           
-    box-sizing: border-box;
-    padding: 16px;               
-    padding-bottom: 40px;        
-    border-bottom: 2px solid rgba(218, 165, 32, 0.2);
-    word-wrap: break-word;
-    overflow-wrap: break-word;
+.page_heading{
+    font-size:26px;
+    font-weight:bold;
+    position:fixed;
+    z-index:9;
+    color:white !important;
+    text-shadow:1px 1px gold;
+    letter-spacing:4px;
+    width:333px;
+    right:16px;
+    text-align:right;
+    top:23px;
+    text-decoration:underline;
+    font-family:"Rationale";
+    
+
 }
 
-.quotation_div .quotation {
-    margin: 0 0 10px 0;
-    overflow: hidden;          
-    box-sizing: border-box;
-    color: #f4eadb;
-}
-
-.quotation_div .src {
-    position: absolute;
-    bottom: 12px;                
-    left: 16px;                  
-    right: 16px;                 
-    margin: 0;
-    color: #daa520;
-    font-style: italic;
-    font-size: 13px;
+div.TEMPEST{
+    padding-top:27px;
 }
 
 
-/* ==========================================
-   5. DROP CAPS STYLING
-   ================================          */
-.dropcap, 
-.quotation::first-letter {
-    float: left;
-    font-size: 55px;           
-    line-height: 0.8;          
-    margin-right: 8px;         
-    margin-bottom: -4px;
-    padding-top: 4px;
-    font-family: "Zen Dots", "Georgia", serif;
-    color: #ffd700;
+.src{
 }
 
 
-/* ==========================================
-   6. SCROLLABLE CONTAINER & SEARCH INPUTS
-   ================================          */
-div.TEMPLAR.quotations {
-    box-sizing: border-box;
-    position: relative;
-    overflow-y: auto;
-    height: 75vh;
-    padding-right: 15px;
-    border-right: 2px solid rgba(218, 165, 32, 0.2);
+
+.quotation{
+    color:WHITESMOKE !important;
+    float:left;
+    display:block;
+    margin:0 auto;
+    line-height:47px;
+    position:relative;
+    text-align:justify;
+    font-family:"Share Tech", serif, system-ui;
+    box-sizing:border-box;
+    font-size:19px;
+    display:inline-block;
+
+    
 }
 
-#quotationSearchInput {
-    background: rgba(43, 31, 24, 0.6);
-    border: 1px solid rgba(218, 165, 32, 0.3);
-    color: #f3e5ab;
-    border-radius: 4px;
-    padding: 8px;
-    font-size: 16px;
-    transition: all 0.3s ease;
-    width: 220px;
+
+
+.src{
+    color:goldenrod;
+    letter-spacing:1px;
+    text-align:right;
+    bottom:9px;
+    font-size:24px;
+    padding-bottom:40px;
+    marign-right:17px;
+    display:inline-block;
+    position:absolute;
+    bottom:14px;
+    right:14px;
+    font-family:"Rationale", sans-serif;
 }
 
-#quotationSearchInput::placeholder {
-    color: rgba(243, 229, 171, 0.5);
+.mobile_sidebar{
+    display:none;
 }
 
-#quotationSearchInput:focus {
-    border-color: rgba(218, 165, 32, 0.8);
-    box-shadow: 0 0 10px rgba(218, 165, 32, 0.3);
-    outline: none;
+#mobile_header{
+    display:none;
 }
-/* ==================================
 
-    DESKTOPV MOBILE
-    ==============================
-*/
+div.home{
+    text-align:justify;
+    font-family:"Montserrat", sans-serif;
+    font-style:normal;
+
+}
+
+
+#myriad{
+    font-style:italic;
+    text-align:left;
+
+}
+
+
+#myriad_src{
+    text-align:left;
+}
+
+.myriad_div{
+
+}
+
+#mandala{
+    position:fixed;
+    top:55px;
+    z-index:9999;
+    font-family:"Montserrat", sans-serif;
+    color:darkviolet;
+    font-size:11px;
+    padding-left:8px;
+    display:block;
+    width:281px;
+}
+
+header{
+    display:block;
+}
 
 #js_mobile_menu, .js_mobile_menu{
     display:none;
 }
 
-/* ==========================================
-   7. ANIMATIONS & RESPONSIVE BREAKPOINTS
-   ================================          */
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(15px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+#cornerstone{
+    position:fixed;
+    top:3px;
+    right:15px;
 }
 
-.quotation_div {
-    animation: fadeInUp 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-    transition: background-color 0.2s ease, transform 0.2s ease;
-}
-
-.quotation_div:hover {
-    background-color: rgba(218, 165, 32, 0.05);
-    transform: translateX(4px);
-    border-left: 2px solid rgba(218, 165, 32, 0.6);
-}
-
-@media screen and (max-width: 1079px) {
-    h1{
-        position:fixed;
-        left:47px;
-        top:18px;
-        display:none;
-    }
-
-
-
-    .sidebar {
-        display: none;
-    }
-
+@media screen and (max-width:1079px){
     #js_mobile_menu{
         display:block;
-        font-size:40px;
+        font-size:45px;
         position:fixed;
-        left:0;
-        top:2px;
-        color:goldenrod;
         z-index:9999;
+        color:whitesmoke;
+        left:3px;
+        top:7px;
+        text-decoration:none;
+    }
+
+    #js_mobile_menu:hover{
+        color:gold;
     }
 
     .js_mobile_menu{
-        position:absolute;
-        top:62px;
-        bottom:0;
-        width:100%;
-        height:100%;
-        z-index:9998;
-        background-color:brown;
-    }
-
-    .hide, a.quotations{
         display:none;
     }
 
-    div.TEMPEST {
-        left: 0;
-        height: 100%;
-        padding: 20px;
-        top: 72px;
+    .js_mobile_menu{
+        background:radial-gradient(grey, blue, purple);
+        width:100%;
+        position:absolute;
+        z-index:9998;
+        width:100%;
+        height:calc(100% - 72px);
+        top:72px;
+    }
+
+    .menu{
+        width:85%;
+        margin-top:33px;
+    }
+
+    .sidebar{
+        display:none;
+    }
+
+    .quotation_div{
+        padding:13px;
+        min-height:444px;
+    }
+
+    .quotation{
+        padding:14px;
+    }
+
+    h1{
+        font-size:27px;
+        position:fixed;
+        text-decoration:none;
+        top:13px;
+        left:55px;
+    }
+
+    .page_heading{
+        position:fixed;
+        font-size:19px;
+        right:auto;
+        left:13px;
+        width:auto;
+        bottom:25px;
+        top:auto;
+    }
+
+
+
+    div.TEMPEST{
+        width:100%;
+        left:0px;
+        border-radius:0;
     }
 
     input{
-        width:220px;
     }
 }
