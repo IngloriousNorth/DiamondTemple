@@ -34,8 +34,8 @@ body {
 	table-layout: fixed;
 	border:3px dotted gold !important;
 	overflow: hidden;
-	background-image:url("/img/WhiteTara-LrgPUJA.jpg");
-	background-size:cover;
+	background-image:url("./img/WhiteTara-LrgPUJA.jpg");
+	background-size:contain;
 	/* Centers the image within the container */
     background-position: center center; 
     
