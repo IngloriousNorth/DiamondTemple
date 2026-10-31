@@ -105,7 +105,287 @@ div.TEMPEST.quotations {
     padding-right: 15px;
     border-right: 2px solid rgba(255, 255, 255, 0.2);
 }
+/* ==========================================
+   1. GLOBAL & BODY STYLING (Brown / Zen Look)
+   ================================          */
+body {
+    background-color: #2b1f18; /* Deep monastic brown base */
+    color: #e6d5c3;            /* Warm parchment text color */
+    font-family: 'Share Tech', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
+header {
+    background: linear-gradient(135deg, #3d291d, #241812);
+    border-bottom: 2px solid rgba(218, 165, 32, 0.3);
+    padding: 12px 20px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+header h1 {
+    font-family: 'Zen Dots', sans-serif;
+    color: #f3e5ab;
+    font-size: 22px;
+    margin: 0;
+    letter-spacing: 1px;
+    transition: text-shadow 0.3s ease, color 0.3s ease;
+}
+
+header h1:hover {
+    text-shadow: 0 0 12px rgba(218, 165, 32, 0.8), 0 0 25px rgba(255, 215, 0, 0.4);
+    color: #fff;
+}
+
+
+/* ==========================================
+   2. SIDEBAR & DHARMA WHEEL (☸) NAVIGATION
+   ================================          */
+.sidebar {
+    position: absolute;
+    top: 72px;
+    left: 0;
+    width: 280px;
+    height: calc(100% - 72px);
+    background: rgba(43, 31, 24, 0.95);
+    border-right: 2px solid rgba(218, 165, 32, 0.2);
+    box-sizing: border-box;
+    overflow-y: auto;
+    padding: 15px 10px;
+    z-index: 900;
+}
+
+.sidebar ul.menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar .menu li {
+    margin-bottom: 8px;
+}
+
+/* Category header links */
+.sidebar .nav_a {
+    font-family: 'Rationale', sans-serif;
+    font-size: 18px;
+    color: #f3e5ab;
+    text-decoration: none;
+    display: inline-block;
+    padding: 6px 8px;
+    transition: color 0.2s ease;
+}
+
+.sidebar .nav_a:hover {
+    color: #fff;
+    text-shadow: 0 0 8px rgba(218, 165, 32, 0.6);
+}
+
+/* Submenu container (hidden by default) */
+.sidebar ul ul {
+    list-style: none;
+    padding-left: 20px;
+    margin: 5px 0 0 0;
+    display: none; 
+}
+
+/* Submenu items (.TEMPEST / .quotations links) */
+.sidebar ul ul li a.quotations {
+    display: block;
+    padding: 6px 10px;
+    color: #d1b89b;
+    text-decoration: none;
+    font-size: 14px;
+    border-radius: 4px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.sidebar ul ul li a.quotations:hover {
+    background-color: rgba(218, 165, 32, 0.15);
+    color: #ffd700;
+    padding-left: 14px;
+}
+
+/* Dharma Wheel (☸) toggles for show / hide states */
+.sidebar .show, 
+.sidebar .hide {
+    text-decoration: none;
+    font-size: 14px;
+    color: #daa520;
+    margin-right: 6px;
+    display: inline-block;
+    transition: transform 0.3s ease, color 0.2s ease;
+}
+
+.sidebar .show::before {
+    content: "☸ "; /* Dharma Wheel symbol */
+}
+
+.sidebar .hide::before {
+    content: "☸ "; /* Dharma Wheel symbol */
+}
+
+.sidebar .show:hover, 
+.sidebar .hide:hover {
+    color: #ffd700;
+    transform: rotate(45deg);
+}
+
+
+/* ==========================================
+   3. TEMPEST LAYOUT & GOLDENROD CONTAINERS
+   ================================          */
+div.TEMPEST {
+    height: 87%;
+    padding: 99px;
+    position: absolute;
+    top: 72px;
+    left: 280px; /* Offset past sidebar width */
+    right: 0;
+    box-sizing: border-box;
+    
+    /* Goldenrod & rich purple-brown rgba styling */
+    background: rgba(77, 55, 77, 0.444), linear-gradient(rgba(43, 31, 24, 0.85), rgba(43, 31, 24, 0.85)); 
+    background-blend-mode: lighten;
+    isolation: isolate;
+    overflow-y: auto;
+}
+
+
+/* ==========================================
+   4. QUOTATION CARDS & ABSOLUTE SOURCE PADDING
+   ================================          */
+.quotation_div {
+    position: relative;          
+    height: auto;
+    min-height: 120px;           
+    box-sizing: border-box;
+    padding: 16px;               
+    padding-bottom: 40px;        
+    border-bottom: 2px solid rgba(218, 165, 32, 0.2);
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.quotation_div .quotation {
+    margin: 0 0 10px 0;
+    overflow: hidden;          
+    box-sizing: border-box;
+    color: #f4eadb;
+}
+
+/* Pin .src to the bottom of each card */
+.quotation_div .src {
+    position: absolute;
+    bottom: 12px;                
+    left: 16px;                  
+    right: 16px;                 
+    margin: 0;
+    color: #daa520;
+    font-style: italic;
+    font-size: 13px;
+}
+
+
+/* ==========================================
+   5. DROP CAPS STYLING
+   ================================          */
+.dropcap, 
+.quotation::first-letter {
+    float: left;
+    font-size: 55px;           
+    line-height: 0.8;          
+    margin-right: 8px;         
+    margin-bottom: -4px;
+    padding-top: 4px;
+    font-family: "Zen Dots", "Georgia", serif;
+    color: #ffd700;
+}
+
+
+/* ==========================================
+   6. SCROLLABLE CONTAINER & SEARCH INPUTS
+   ================================          */
+div.TEMPLAR.quotations {
+    box-sizing: border-box;
+    position: relative;
+    overflow-y: auto;
+    height: 75vh;
+    padding-right: 15px;
+    border-right: 2px solid rgba(218, 165, 32, 0.2);
+}
+
+#quotationSearchInput {
+    background: rgba(43, 31, 24, 0.6);
+    border: 1px solid rgba(218, 165, 32, 0.3);
+    color: #f3e5ab;
+    border-radius: 4px;
+    padding: 8px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    width: 300px;
+}
+
+#quotationSearchInput::placeholder {
+    color: rgba(243, 229, 171, 0.5);
+}
+
+#quotationSearchInput:focus {
+    border-color: rgba(218, 165, 32, 0.8);
+    box-shadow: 0 0 10px rgba(218, 165, 32, 0.3);
+    outline: none;
+}
+
+
+/* ==========================================
+   7. ANIMATIONS & RESPONSIVE BREAKPOINTS
+   ================================          */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.quotation_div {
+    animation: fadeInUp 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.quotation_div:hover {
+    background-color: rgba(218, 165, 32, 0.05);
+    transform: translateX(4px);
+    border-left: 2px solid rgba(218, 165, 32, 0.6);
+}
+
+/* Mobile & Tablet breakpoint */
+@media screen and (max-width: 1079px) {
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+        top: 0;
+    }
+    div.TEMPEST {
+        left: 0;
+        height: 100%;
+        padding: 20px;
+        top: 72px;
+    }
+}
 #quotationSearchInput {
     background: rgba(0, 0, 0, 0.4);
     border: 1px solid rgba(255, 255, 255, 0.15);
