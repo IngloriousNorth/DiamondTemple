@@ -93,7 +93,7 @@ const implementQuotation = function(node, container) {
     var src = document.createElement("p");
     $(src).addClass("src").text(" -- " + node.src + (node.ai ? " [AI]" : ""));
     $(a).append(src);
-    $(div).append(p).append("<br><br><br>").append(a);
+    $(div).append(p).append(a);
     
     // Fixed container selector matching the rest of the file
     $(container).append(div);

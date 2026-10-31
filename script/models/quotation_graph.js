@@ -1735,7 +1735,7 @@ const graph = {
 		{
 			start : "thoth_star",
 			end : "avatam_lands",
-			pages : ["Avatamsaka Sutra", "MythOS" "Sun", "Wisdom"]
+			pages : ["Avatamsaka Sutra", "MythOS", "Sun", "Wisdom"]
 		},
 		{
 			start : "plotinus_the_one",
@@ -1745,7 +1745,7 @@ const graph = {
 		{
 			start: "emerald_sun",
 			end : "vimalakirti_root",
-			pages : ["Sun", "Form", "Space", "MythOS" "Sunyata (Emptiness)"]
+			pages : ["Sun", "Form", "Space", "MythOS", "Sunyata (Emptiness)"]
 		},
 		{
 			start : "for_science",
