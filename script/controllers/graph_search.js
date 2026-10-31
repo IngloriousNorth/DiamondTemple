@@ -1,8 +1,8 @@
 import MVC from '../../lib/MAINFRAME.js';
-import TEMPLAR from '../../lib/TEMPLAR.js';
+import TEMPEST from '../../lib/TEMPEST.js';
 
 const unfold = function() {
-    const params = TEMPLAR.paramREC();
+    const params = TEMPEST.paramREC();
     const query = params && params.q ? decodeURIComponent(params.q).trim() : "";
     const resultsContainer = $('.graph-search');
     resultsContainer.empty();
@@ -59,7 +59,7 @@ const unfold = function() {
         };
 
         matches.forEach(node => {
-            MVC.Controller.quotations.implementQuotation(node, "div.TEMPLAR.graph-search")
+            MVC.Controller.quotations.implementQuotation(node, "div.TEMPEST.graph-search")
         });
 
     } catch (e) {
@@ -73,10 +73,10 @@ $(document).on('input', '#quotationSearchInput', function() {
     const query = $(this).val().trim();
     if (query) {
         $('.graph-search').show();
-        TEMPLAR.route("#graph-search?q=" + encodeURIComponent(query));
+        TEMPEST.route("#graph-search?q=" + encodeURIComponent(query));
     } else {
         $('.graph-search').empty().hide();
-        TEMPLAR.route("#home");
+        TEMPEST.route("#home");
     }
 });
 

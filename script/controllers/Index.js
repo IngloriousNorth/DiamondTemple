@@ -1,8 +1,8 @@
 import MVC from '../../lib/MAINFRAME.js';
-import TEMPLAR from '../../lib/TEMPLAR.js';
+import TEMPEST from '../../lib/TEMPEST.js';
 
 $(document).ready(function(){
-	TEMPLAR.initialize({
+	TEMPEST.initialize({
 		pages : ["home", "graph-search", "quotations"],
 		defaultPage : "home",
 		dir : "partials",
@@ -15,13 +15,13 @@ $(document).ready(function(){
 					fn : function(){
 						$(".page_heading").text("Home")
 						MVC.View.home.initialize();
-						MVC.Controller.flash.initialize(TEMPLAR.paramREC()?.index);
+						MVC.Controller.flash.initialize(TEMPEST.paramREC()?.index);
 					}
 				},
 				{
 					page : "graph-search",
 					fn : function(){
-						MVC.Controller.search.unfold(TEMPLAR.paramREC().q);
+						MVC.Controller.search.unfold(TEMPEST.paramREC().q);
 						$("h2").text("Graph-Search");
 					}
 				},
@@ -29,7 +29,7 @@ $(document).ready(function(){
 					page: "quotations",
 					fn : function(){
 						MVC.Controller.quotations.unfold();
-						$(".page_heading").text(TEMPLAR.paramREC().path)
+						$(".page_heading").text(TEMPEST.paramREC().path)
 					}
 				}
 
@@ -37,8 +37,8 @@ $(document).ready(function(){
 	}, ()=>MVC.View.menu.unfold());
 })
 
-$(document).on("TEMPLAR", function(){
-	$(".TEMPLAR").scrollTop(0);
+$(document).on("TEMPEST", function(){
+	$(".TEMPEST").scrollTop(0);
 })
 
 $(document).ready(function(){

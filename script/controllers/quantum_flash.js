@@ -1,5 +1,5 @@
 import MVC from '../../lib/MAINFRAME.js';
-import TEMPLAR from '../../lib/TEMPLAR.js';
+import TEMPEST from '../../lib/TEMPEST.js';
 
 const initialize = function(index = undefined){
     $("button").off("click").on('click', function() {
@@ -85,11 +85,11 @@ const QRNG = function(providedStartKey = null) {
 
             if (node) {
                 // Smooth flash card fade transition
-                TEMPLAR.paramSET({"index" : node.index});
-                $('#myriad, #myriad_src, div.TEMPLAR.home').fadeOut(150, function() {
+                TEMPEST.paramSET({"index" : node.index});
+                $('#myriad, #myriad_src, div.TEMPEST.home').fadeOut(150, function() {
                     $('#myriad').html(node.quotation);
                     $('#myriad_src').html(" -- " + node.src);
-                    $('#myriad, #myriad_src, div.TEMPLAR.home').fadeIn(150);
+                    $('#myriad, #myriad_src, div.TEMPEST.home').fadeIn(150);
                 });
             }
         })

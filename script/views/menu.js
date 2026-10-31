@@ -1,5 +1,5 @@
 import MVC from '../../lib/MAINFRAME.js';
-import TEMPLAR from '../../lib/TEMPLAR.js';
+import TEMPEST from '../../lib/TEMPEST.js';
 
 const unfold = function(){
 	const menuData = MVC.Model.menu.menu;
@@ -34,7 +34,7 @@ const unfold = function(){
 		const li = document.createElement("li");
 		const a = document.createElement("a");
 		$(a).text(item);
-		$(a).addClass("TEMPLAR");
+		$(a).addClass("TEMPEST");
 		$(a).addClass("quotations");
 		
 		const menuClass = $(menu).attr("class");
@@ -50,8 +50,8 @@ const unfold = function(){
 		menu.append(li);
 	}
 
-	$(document).on("TEMPLAR", function(){
-		$('.TEMPLAR').animate({
+	$(document).on("TEMPEST", function(){
+		$('.TEMPEST').animate({
             scrollTop: 0
         }, 'smooth');
 	});

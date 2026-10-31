@@ -97,7 +97,7 @@ div.TEMPEST {
    4. SCROLLABLE CONTAINER & SEARCH INPUTS
    ================================          */
 
-div.TEMPLAR.quotations {
+div.TEMPEST.quotations {
     box-sizing: border-box;
     position: relative;
     overflow-y: auto;
@@ -210,7 +210,7 @@ div.TEMPLAR.quotations {
 
 /* Mobile & Tablet breakpoint */
 @media screen and (max-width: 1079px) {
-    div.TEMPLAR {
+    div.TEMPEST {
         height: 100%;
         padding: 20px;
         top: 0;
