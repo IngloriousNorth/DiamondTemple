@@ -2,7 +2,7 @@ const menu = {
 	"western_thinkers" : ["Heraclitus", "Socrates", "Plato", "Marcus Aurelius", "Plotinus", 
 		"Descartes", "Spinoza", "Hume", "Kant", 
 		"Hegel", "Nietzsche", "Bertrand Russell", 
-		"Thomas Kuhn", "Derrida", "Julius Evola"]
+	    "Derrida", "Julius Evola"]
 	,
 	"buddhist_sutras" : ["The Dhammapada", "Vimalakirti Sutra", 
 		"Exalted Sublime Golden Light", "Diamond Sutra", "Heart Sutra", 

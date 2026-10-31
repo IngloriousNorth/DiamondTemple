@@ -51,7 +51,7 @@ const unfold = function(){
 	}
 
 	$(document).on("TEMPEST", function(){
-		$('.TEMPEST').animate({
+		$('div.TEMPEST').animate({
             scrollTop: 0
         }, 'smooth');
 	});

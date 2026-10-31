@@ -22,16 +22,21 @@ header {
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 1000;
+    z-index: 9999;
 }
 
 header h1 {
     font-family: 'Zen Dots', sans-serif;
-    color: #f3e5ab;
+    color: WHITESMOKE !important;
     font-size: 22px;
     margin: 0;
     letter-spacing: 1px;
     transition: text-shadow 0.3s ease, color 0.3s ease;
+    text-decoration: none;
+}
+
+header a {
+    text-decoration: none;
 }
 
 header h1:hover {
@@ -41,9 +46,9 @@ header h1:hover {
 
 
 /* ==========================================
-   2. SIDEBAR & DHARMA WHEEL (☸) NAVIGATION
+   2. SIDEBAR & DHARMA WHEEL NAVIGATION
    ================================          */
-.sidebar {
+.sidebar, .js_mobile_menu {
     position: absolute;
     top: 72px;
     left: 0;
@@ -57,18 +62,24 @@ header h1:hover {
     z-index: 900;
 }
 
-.sidebar ul.menu {
+.sidebar ul.menu, .js_mobile_menu ul.menu {
     list-style: none;
     padding: 0;
     margin: 0;
 }
 
-.sidebar .menu li {
-    margin-bottom: 8px;
+/* Ensure sidebar list items stack cleanly and take full width */
+.sidebar ul.menu > li, .js_mobile_menu ul.menu > li{
+    display: block;
+    position: relative;
+    width: 100%;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    clear: both;
 }
 
 /* Category header links */
-.sidebar .nav_a {
+.sidebar .nav_a, .js_mobile_menu .nav_a{
     font-family: 'Rationale', sans-serif;
     font-size: 18px;
     color: #f3e5ab;
@@ -78,21 +89,28 @@ header h1:hover {
     transition: color 0.2s ease;
 }
 
-.sidebar .nav_a:hover {
-    color: #fff;
+.sidebar .nav_a:hover, .js_mobile_menu .nav_a:hover{
+    color: #ffd700;
     text-shadow: 0 0 8px rgba(218, 165, 32, 0.6);
 }
 
 /* Submenu container */
-.sidebar ul ul {
+.sidebar ul.menu li ul, .js_mobile_menu ul.menu li ul{
     list-style: none;
     padding-left: 20px;
     margin: 5px 0 0 0;
     display: none; 
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.sidebar ul.menu li ul li, .js_mobile_menu ul.menu li ul li{
+    display: block;
+    width: 100%;
 }
 
 /* Submenu items (.TEMPEST / .quotations links) */
-.sidebar ul ul li a.quotations {
+.sidebar ul ul li a.quotations, .js_mobile_menu ul ul li a.quotations {
     display: block;
     padding: 6px 10px;
     color: #d1b89b;
@@ -102,37 +120,38 @@ header h1:hover {
     transition: background-color 0.2s ease, color 0.2s ease;
 }
 
-.sidebar ul ul li a.quotations:hover {
+.sidebar ul ul li a.quotations:hover, .js_mobile_menu  ul ul li a.quotations:hover {
     background-color: rgba(218, 165, 32, 0.15);
     color: #ffd700;
     padding-left: 14px;
 }
 
-/* Dharma Wheel (☸) toggles for show / hide states */
-.sidebar .show, 
-.sidebar .hide {
+/* Show / Hide toggle carets */
+.show, 
+.hide {
+    display: inline-block;
+    width: 20px;
+    text-align: center;
+    vertical-align: middle;
     text-decoration: none;
     font-size: 14px;
     color: #daa520;
-    margin-right: 6px;
-    display: inline-block;
+    margin-right: 4px;
     transition: transform 0.3s ease, color 0.2s ease;
 }
 
-.sidebar .show::before {
-    content: "☸ "; 
+.hide{
+    display:none;
 }
 
-.sidebar .hide::before {
-    content: "☸ "; 
-}
-
-.sidebar .show:hover, 
-.sidebar .hide:hover {
+.show:hover, 
+.hide:hover {
     color: #ffd700;
-    transform: rotate(45deg);
 }
 
+.hide{
+    color:whitesmoke;
+}
 
 /* ==========================================
    3. TEMPEST CONTAINER & BACKGROUND SCALING
@@ -146,7 +165,6 @@ div.TEMPEST {
     right: 0;
     box-sizing: border-box;
     
-    /* Goldenrod & rich dark monastic rgba background layering */
     background-image: linear-gradient(rgba(43, 31, 24, 0.85), rgba(43, 31, 24, 0.85)), url('path/to/your/image.jpg');
     background-size: cover; 
     background-position: center center; 
@@ -168,7 +186,7 @@ div.TEMPEST {
     min-height: 120px;           
     box-sizing: border-box;
     padding: 16px;               
-    padding-bottom: 40px;        /* Prevents text overlap with .src */
+    padding-bottom: 40px;        
     border-bottom: 2px solid rgba(218, 165, 32, 0.2);
     word-wrap: break-word;
     overflow-wrap: break-word;
@@ -181,7 +199,6 @@ div.TEMPEST {
     color: #f4eadb;
 }
 
-/* Pin .src to the bottom of each card */
 .quotation_div .src {
     position: absolute;
     bottom: 12px;                
@@ -230,7 +247,7 @@ div.TEMPLAR.quotations {
     padding: 8px;
     font-size: 16px;
     transition: all 0.3s ease;
-    width: 300px;
+    width: 220px;
 }
 
 #quotationSearchInput::placeholder {
@@ -242,7 +259,15 @@ div.TEMPLAR.quotations {
     box-shadow: 0 0 10px rgba(218, 165, 32, 0.3);
     outline: none;
 }
+/* ==================================
 
+    DESKTOPV MOBILE
+    ==============================
+*/
+
+#js_mobile_menu, .js_mobile_menu{
+    display:none;
+}
 
 /* ==========================================
    7. ANIMATIONS & RESPONSIVE BREAKPOINTS
@@ -269,18 +294,51 @@ div.TEMPLAR.quotations {
     border-left: 2px solid rgba(218, 165, 32, 0.6);
 }
 
-/* Mobile & Tablet breakpoint */
 @media screen and (max-width: 1079px) {
-    .sidebar {
-        width: 100%;
-        height: auto;
-        position: relative;
-        top: 0;
+    h1{
+        position:fixed;
+        left:47px;
+        top:18px;
     }
+
+
+
+    .sidebar {
+        display: none;
+    }
+
+    #js_mobile_menu{
+        display:block;
+        font-size:40px;
+        position:fixed;
+        left:0;
+        top:2px;
+        color:goldenrod;
+        z-index:9999;
+    }
+
+    .js_mobile_menu{
+        position:absolute;
+        top:62px;
+        bottom:0;
+        width:100%;
+        height:100%;
+        z-index:9998;
+        background-color:brown;
+    }
+
+    .hide, a.quotations{
+        display:none;
+    }
+
     div.TEMPEST {
         left: 0;
         height: 100%;
         padding: 20px;
         top: 72px;
+    }
+
+    input{
+        width:220px;
     }
 }
