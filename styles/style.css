@@ -36,6 +36,14 @@ body {
 	overflow: hidden;
 	background-image:url("/img/WhiteTara-LrgPUJA.jpg");
 	background-size:cover;
+	/* Centers the image within the container */
+    background-position: center center; 
+    
+    /* Prevents the image from repeating as a tile */
+    background-repeat: no-repeat; 
+    
+    /* Keeps the background locked in place while scrolling */
+    background-attachment: fixed;
 
 }
 ol, ul {
