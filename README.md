@@ -1,5 +1,9 @@
-While I actually did personally write the DB, I didn't copy and paste duplicate quotations in every page; actually, it is stored in a JSON graph DB. 
+# What is it?
+About 200 quotations stored in a JSON Graph DB. 
 
-There is also a javascript quantum Graph Recommendation Engine featuring a Basic Algorithm I came up when I was working with Neo4J, which you may see by clicking "Quantum Flash" on the #Home Page.
+# Engineering Features
+-Quantum Graph recommendation engine, using my first algorithm, arr[index] = [QRNG.number % arr.length] 
+-Quantum Infinite-Scroll using a True Random seed.
+-Real-Time Graph search matching regex.
 
-You can browse the GraphDB at https://diamond-temple.vercel.app
+For the full app, Follow the vercel link in the description, or else you may like my Zen iteration @ https://ingloriousnorth.github.io/diamond-temple.
