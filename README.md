@@ -2,8 +2,9 @@
 About 200 quotations stored in a JSON Graph DB. 
 
 # Engineering Features
--Quantum Graph recommendation engine, using my first algorithm, arr[index] = [QRNG.number % arr.length] 
--Quantum Infinite-Scroll using a True Random seed.
+-Quantum Graph recommendation engine, using my first algorithm, arr[index] = [QRNG.number % arr.length]<br>
+-Quantum Infinite-Scroll using a True Random seed.<br>
 -Real-Time Graph search matching regex.
 
+# See it Live
 For the full app, Follow the vercel link in the description, or else you may like my Zen iteration @ https://ingloriousnorth.github.io/diamond-temple.
