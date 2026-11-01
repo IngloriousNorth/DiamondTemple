@@ -356,6 +356,7 @@ div.TEMPEST{
 .quotation{
 	color:WHITESMOKE !important;
 	float:left;
+	font-style:italic;
 	display:block;
 	margin:0 auto;
 	margin-top:32px;
