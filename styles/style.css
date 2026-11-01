@@ -106,7 +106,7 @@ button{
     position:absoulute;
     cursor:pointer;
     position:fixed;
-    left:0;
+    left:47px;
     bottom:0;
     margin:0 auto;
 }
