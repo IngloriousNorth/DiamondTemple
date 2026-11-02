@@ -7,4 +7,4 @@ About 200 quotations pertaining to the single-vehicle (of Enlightenment)  stored
 -Real-Time Graph search matching regex.
 
 # See it Live
-For the full app, Follow the vercel link in the description, or else you may like my Zen iteration @ https://ingloriousnorth.github.io/diamond-temple.
+For the full app, Follow the vercel link in the description, or else you may like my Zen iteration @ https://ingloriousnorth.github.io/DiamondTemple.
